@@ -1,0 +1,19 @@
+const char* Rolling_Yut()
+{
+	const int go[16] = { 1,1,1,2,2,2,2,2,2,3,3,3,3,4,5,6 };
+	switch (go[rand() % 16])
+	{
+	    case 1: return "Do";
+		break;
+		case 2: return "Gae";
+		break;
+		case 3: return "Gul";
+		break;
+		case 4: return "Yut";
+		break;
+		case 5: return "Mo";
+		break;
+		case 6: return "BackDo";
+		break;
+	}
+}
