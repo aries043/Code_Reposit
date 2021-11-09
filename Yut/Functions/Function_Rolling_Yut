@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void Rolling_Yut(int* yut_array, int *count)
+{
+	const int go[16] = { 1,1,1,2,2,2,2,2,2,3,3,3,3,4,5,6 };
+	int state = 0, i = 0;
+	yut_array[20] = { 0, };
+	while (1)
+	{
+		int yut = go[rand() % 16],
+		state = 0;
+		switch (yut)
+		{
+		case 1:
+			yut_array[i] = yut;
+			printf("Do!\n");
+			break;
+		case 2:
+			yut_array[i] = yut;
+			printf("Gae!\n");
+			break;
+		case 3:
+			yut_array[i] = yut;
+			printf("Gul!\n");
+			break;
+		case 4:
+			yut_array[i] = yut;
+			printf("Yut!\n");
+			i++;
+			state = 1;
+			break;
+		case 5:
+			yut_array[i] = yut;
+			printf("Mo!\n");
+			i++;
+			state = 1;
+			break;
+		case 6:
+			yut_array[i] = yut;
+			printf("BackDo!\n");
+			break;
+		}
+		if (state == 0) break;
+	}
+	*count = i + 1;
+}
+
+int main()
+{
+	int yut_array[10] = { 0, };
+	int count = 0;
+	Rolling_Yut(yut_array, &count);
+}
